@@ -1,0 +1,1892 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://github.com/steves/node-jira"
+
+    >jira (v0.9.2)</a>
+</h1>
+<h4>Wrapper for the JIRA API</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jira">module jira</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi">
+            function <span class="apidocSignatureSpan">jira.</span>JiraApi
+            <span class="apidocSignatureSpan">(protocol, host, port, username, password, apiVersion, verbose, strictSSL, oauth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jira.</span>JiraApi.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jira.JiraApi">module jira.JiraApi</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.JiraApi">
+            function <span class="apidocSignatureSpan">jira.</span>JiraApi
+            <span class="apidocSignatureSpan">(protocol, host, port, username, password, apiVersion, verbose, strictSSL, oauth)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jira.JiraApi.prototype">module jira.JiraApi.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.addComment">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>addComment
+            <span class="apidocSignatureSpan">(issueId, comment, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.addIssueToSprint">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>addIssueToSprint
+            <span class="apidocSignatureSpan">(issueId, sprintId, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.addNewIssue">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>addNewIssue
+            <span class="apidocSignatureSpan">(issue, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.addWorklog">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>addWorklog
+            <span class="apidocSignatureSpan">(issueId, worklog, newEstimate, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.createVersion">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>createVersion
+            <span class="apidocSignatureSpan">(version, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.deleteIssue">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>deleteIssue
+            <span class="apidocSignatureSpan">(issueNum, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.deleteWebhook">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>deleteWebhook
+            <span class="apidocSignatureSpan">(webhookID, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.findIssue">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>findIssue
+            <span class="apidocSignatureSpan">(issueNumber, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.findRapidView">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>findRapidView
+            <span class="apidocSignatureSpan">(projectName, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.getBacklogForRapidView">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getBacklogForRapidView
+            <span class="apidocSignatureSpan">(rapidViewId, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.getCurrentUser">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getCurrentUser
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.getLastSprintForRapidView">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getLastSprintForRapidView
+            <span class="apidocSignatureSpan">(rapidViewId, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.getProject">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getProject
+            <span class="apidocSignatureSpan">(project, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.getSprintIssues">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getSprintIssues
+            <span class="apidocSignatureSpan">(rapidViewId, sprintId, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.getUnresolvedIssueCount">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getUnresolvedIssueCount
+            <span class="apidocSignatureSpan">(version, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.getUsersIssues">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getUsersIssues
+            <span class="apidocSignatureSpan">(username, open, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.getVersions">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getVersions
+            <span class="apidocSignatureSpan">(project, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.getWebhook">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getWebhook
+            <span class="apidocSignatureSpan">(webhookID, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.issueLink">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>issueLink
+            <span class="apidocSignatureSpan">(link, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.listComponents">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listComponents
+            <span class="apidocSignatureSpan">(project, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.listFields">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listFields
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.listIssueTypes">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listIssueTypes
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.listPriorities">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listPriorities
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.listProjects">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listProjects
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.listTransitions">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listTransitions
+            <span class="apidocSignatureSpan">(issueId, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.listWebhooks">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listWebhooks
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.registerWebhook">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>registerWebhook
+            <span class="apidocSignatureSpan">(webhook, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.searchJira">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>searchJira
+            <span class="apidocSignatureSpan">(searchString, optional, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.searchUsers">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>searchUsers
+            <span class="apidocSignatureSpan">(username, startAt, maxResults, includeActive, includeInactive, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.transitionIssue">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>transitionIssue
+            <span class="apidocSignatureSpan">(issueNum, issueTransition, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.updateIssue">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>updateIssue
+            <span class="apidocSignatureSpan">(issueNum, issueUpdate, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jira.JiraApi.prototype.updateVersion">
+            function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>updateVersion
+            <span class="apidocSignatureSpan">(version, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jira" id="apidoc.module.jira">module jira</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi" id="apidoc.element.jira.JiraApi">
+        function <span class="apidocSignatureSpan">jira.</span>JiraApi
+        <span class="apidocSignatureSpan">(protocol, host, port, username, password, apiVersion, verbose, strictSSL, oauth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JiraApi = function (protocol, host, port, username, password, apiVersion, verbose, strictSSL, oauth) {
+    this.protocol = protocol;
+    this.host = host;
+    this.port = port;
+    this.username = username;
+    this.password = password;
+    this.apiVersion = apiVersion;
+    // Default strictSSL to true (previous behavior) but now allow it to be
+    // modified
+    if (strictSSL == null) {
+        strictSSL = true;
+    }
+    this.strictSSL = strictSSL;
+    // This is so we can fake during unit tests
+    this.request = require(&#x27;request&#x27;);
+    if (verbose !== true) { logger = { log: function() {} }; }
+
+    // This is the same almost every time, refactored to make changing it
+    // later, easier
+    this.makeUri = function(pathname, altBase, altApiVersion) {
+        var basePath = &#x27;rest/api/&#x27;;
+        if (altBase != null) {
+            basePath = altBase;
+        }
+
+        var apiVersion = this.apiVersion;
+        if (altApiVersion != null) {
+          apiVersion = altApiVersion;
+        }
+
+        var uri = url.format({
+            protocol: this.protocol,
+            hostname: this.host,
+            port: this.port,
+            pathname: basePath + apiVersion + pathname
+        });
+        return decodeURIComponent(uri);
+    };
+
+    this.doRequest = function(options, callback) {
+        if(oauth &#x26;&#x26; oauth.consumer_key &#x26;&#x26; oauth.consumer_secret) {
+          options.oauth = {
+            consumer_key: oauth.consumer_key,
+            consumer_secret: oauth.consumer_secret,
+            token: oauth.access_token,
+            token_secret: oauth.access_token_secret
+          };
+        } else {
+          options.auth = {
+            &#x27;user&#x27;: this.username,
+            &#x27;pass&#x27;: this.password
+          };
+        }
+        this.request(options, callback);
+    };
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jira.JiraApi" id="apidoc.module.jira.JiraApi">module jira.JiraApi</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.JiraApi" id="apidoc.element.jira.JiraApi.JiraApi">
+        function <span class="apidocSignatureSpan">jira.</span>JiraApi
+        <span class="apidocSignatureSpan">(protocol, host, port, username, password, apiVersion, verbose, strictSSL, oauth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JiraApi = function (protocol, host, port, username, password, apiVersion, verbose, strictSSL, oauth) {
+    this.protocol = protocol;
+    this.host = host;
+    this.port = port;
+    this.username = username;
+    this.password = password;
+    this.apiVersion = apiVersion;
+    // Default strictSSL to true (previous behavior) but now allow it to be
+    // modified
+    if (strictSSL == null) {
+        strictSSL = true;
+    }
+    this.strictSSL = strictSSL;
+    // This is so we can fake during unit tests
+    this.request = require(&#x27;request&#x27;);
+    if (verbose !== true) { logger = { log: function() {} }; }
+
+    // This is the same almost every time, refactored to make changing it
+    // later, easier
+    this.makeUri = function(pathname, altBase, altApiVersion) {
+        var basePath = &#x27;rest/api/&#x27;;
+        if (altBase != null) {
+            basePath = altBase;
+        }
+
+        var apiVersion = this.apiVersion;
+        if (altApiVersion != null) {
+          apiVersion = altApiVersion;
+        }
+
+        var uri = url.format({
+            protocol: this.protocol,
+            hostname: this.host,
+            port: this.port,
+            pathname: basePath + apiVersion + pathname
+        });
+        return decodeURIComponent(uri);
+    };
+
+    this.doRequest = function(options, callback) {
+        if(oauth &#x26;&#x26; oauth.consumer_key &#x26;&#x26; oauth.consumer_secret) {
+          options.oauth = {
+            consumer_key: oauth.consumer_key,
+            consumer_secret: oauth.consumer_secret,
+            token: oauth.access_token,
+            token_secret: oauth.access_token_secret
+          };
+        } else {
+          options.auth = {
+            &#x27;user&#x27;: this.username,
+            &#x27;pass&#x27;: this.password
+          };
+        }
+        this.request(options, callback);
+    };
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jira.JiraApi.prototype" id="apidoc.module.jira.JiraApi.prototype">module jira.JiraApi.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.addComment" id="apidoc.element.jira.JiraApi.prototype.addComment">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>addComment
+        <span class="apidocSignatureSpan">(issueId, comment, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addComment = function (issueId, comment, callback){
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/issue/&#x27; + issueId + &#x27;/comment&#x27;),
+        body: {
+          &#x22;body&#x22;: comment
+        },
+        method: &#x27;POST&#x27;,
+        followAllRedirects: true,
+        json: true
+    };
+
+    this.doRequest(options, function(error, response, body) {
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 201) {
+            callback(null, &#x22;Success&#x22;);
+            return;
+        }
+
+        if (response.statusCode === 400) {
+            callback(&#x22;Invalid Fields: &#x22; + JSON.stringify(body));
+            return;
+        };
+
+        callback(response.statusCode + &#x27;: Error while adding comment&#x27;);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.addIssueToSprint" id="apidoc.element.jira.JiraApi.prototype.addIssueToSprint">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>addIssueToSprint
+        <span class="apidocSignatureSpan">(issueId, sprintId, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addIssueToSprint = function (issueId, sprintId, callback) {
+
+    var options = {
+      rejectUnauthorized: this.strictSSL,
+      uri: this.makeUri(&#x27;/sprint/&#x27; + sprintId + &#x27;/issues/add&#x27;, &#x27;rest/greenhopper/&#x27;),
+      method: &#x27;PUT&#x27;,
+      followAllRedirects: true,
+      json:true,
+      body: {
+        issueKeys: [issueId]
+      }
+    };
+
+    logger.log(options.uri);
+
+    this.doRequest(options, function(error, response) {
+
+      if (error) {
+          callback(error, null);
+          return;
+      }
+
+      if (response.statusCode === 404) {
+        callback(&#x27;Invalid URL&#x27;);
+        return;
+      }
+
+      if (response.statusCode !== 204) {
+        callback(response.statusCode + &#x27;: Unable to connect to JIRA to add to sprint.&#x27;);
+        return;
+      }
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.addNewIssue" id="apidoc.element.jira.JiraApi.prototype.addNewIssue">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>addNewIssue
+        <span class="apidocSignatureSpan">(issue, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addNewIssue = function (issue, callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/issue&#x27;),
+        method: &#x27;POST&#x27;,
+        followAllRedirects: true,
+        json: true,
+        body: issue
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 400) {
+            callback(body);
+            return;
+        }
+
+        if ((response.statusCode !== 200) &#x26;&#x26; (response.statusCode !== 201)) {
+            callback(response.statusCode + &#x27;: Unable to connect to JIRA during search.&#x27;);
+            return;
+        }
+
+        callback(null, body);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.addWorklog" id="apidoc.element.jira.JiraApi.prototype.addWorklog">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>addWorklog
+        <span class="apidocSignatureSpan">(issueId, worklog, newEstimate, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addWorklog = function (issueId, worklog, newEstimate, callback) {
+    if(typeof callback == &#x27;undefined&#x27;) {
+        callback = newEstimate;
+        newEstimate = false;
+    }
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/issue/&#x27; + issueId + &#x27;/worklog&#x27; + (newEstimate ? &#x22;?adjustEstimate=new&#x26;newEstimate=&#x22; + newEstimate : &#x22;&#x22;)),
+        body: worklog,
+        method: &#x27;POST&#x27;,
+        followAllRedirects: true,
+        json: true
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 201) {
+            callback(null, &#x22;Success&#x22;);
+            return;
+        }
+        if (response.statusCode === 400) {
+            callback(&#x22;Invalid Fields: &#x22; + JSON.stringify(body));
+            return;
+        }
+        if (response.statusCode === 403) {
+            callback(&#x22;Insufficient Permissions&#x22;);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while updating&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.createVersion" id="apidoc.element.jira.JiraApi.prototype.createVersion">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>createVersion
+        <span class="apidocSignatureSpan">(version, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createVersion = function (version, callback) {
+
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/version&#x27;),
+        method: &#x27;POST&#x27;,
+        followAllRedirects: true,
+        json: true,
+        body: version
+    };
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 404) {
+            callback(&#x27;Version does not exist or the currently authenticated user does not have permission to view it&#x27;);
+            return;
+        }
+
+        if (response.statusCode === 403) {
+            callback(&#x27;The currently authenticated user does not have permission to edit the version&#x27;);
+            return;
+        }
+
+        if (response.statusCode !== 201) {
+            callback(response.statusCode + &#x27;: Unable to connect to JIRA during createVersion.&#x27;);
+            return;
+        }
+
+        callback(null, body);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.deleteIssue" id="apidoc.element.jira.JiraApi.prototype.deleteIssue">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>deleteIssue
+        <span class="apidocSignatureSpan">(issueNum, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteIssue = function (issueNum, callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/issue/&#x27; + issueNum),
+        method: &#x27;DELETE&#x27;,
+        followAllRedirects: true,
+        json: true
+    };
+
+    this.doRequest(options, function(error, response) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 204) {
+            callback(null, &#x22;Success&#x22;);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while deleting&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.deleteWebhook" id="apidoc.element.jira.JiraApi.prototype.deleteWebhook">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>deleteWebhook
+        <span class="apidocSignatureSpan">(webhookID, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteWebhook = function (webhookID, callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/webhook/&#x27; + webhookID, &#x27;rest/webhooks/&#x27;, &#x27;1.0&#x27;),
+        method: &#x27;DELETE&#x27;,
+        json: true
+    };
+
+    this.request(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 204) {
+            callback(null, &#x22;Success&#x22;);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while deleting webhook&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.findIssue" id="apidoc.element.jira.JiraApi.prototype.findIssue">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>findIssue
+        <span class="apidocSignatureSpan">(issueNumber, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findIssue = function (issueNumber, callback) {
+
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/issue/&#x27; + issueNumber),
+        method: &#x27;GET&#x27;
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 404) {
+            callback(&#x27;Invalid issue number.&#x27;);
+            return;
+        }
+
+        if (response.statusCode !== 200) {
+            callback(response.statusCode + &#x27;: Unable to connect to JIRA during findIssueStatus.&#x27;);
+            return;
+        }
+
+        if (body === undefined) {
+            callback(&#x27;Response body was undefined.&#x27;);
+            return;
+        }
+
+        callback(null, JSON.parse(body));
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Example ##
+
+Find the status of an issue.
+
+    JiraApi = require(&#x27;jira&#x27;).JiraApi;
+
+    var jira = new JiraApi(&#x27;https&#x27;, config.host, config.port, config.user, config.password, &#x27;2.0.alpha1&#x27;);
+    jira.<span class="apidocCodeKeywordSpan">findIssue</span>(issueNumber, function(error, issue) {
+        console.log(&#x27;Status: &#x27; + issue.fields.status.name);
+    });
+
+Currently there is no explicit login call necessary as each API call uses Basic Authentication to authenticate.
+
+## Options ##
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.findRapidView" id="apidoc.element.jira.JiraApi.prototype.findRapidView">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>findRapidView
+        <span class="apidocSignatureSpan">(projectName, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findRapidView = function (projectName, callback) {
+
+    var options = {
+      rejectUnauthorized: this.strictSSL,
+      uri: this.makeUri(&#x27;/rapidviews/list&#x27;, &#x27;rest/greenhopper/&#x27;),
+      method: &#x27;GET&#x27;,
+      json: true
+    };
+
+    this.doRequest(options, function(error, response) {
+
+      if (error) {
+          callback(error, null);
+          return;
+      }
+
+      if (response.statusCode === 404) {
+        callback(&#x27;Invalid URL&#x27;);
+        return;
+      }
+
+      if (response.statusCode !== 200) {
+        callback(response.statusCode + &#x27;: Unable to connect to JIRA during rapidView search.&#x27;);
+        return;
+      }
+
+      if (response.body !== null) {
+        var rapidViews = response.body.views;
+        for (var i = 0; i &#x3c; rapidViews.length; i++) {
+          if(rapidViews[i].name.toLowerCase() === projectName.toLowerCase()) {
+            callback(null, rapidViews[i]);
+            return;
+          }
+        }
+      }
+
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.getBacklogForRapidView" id="apidoc.element.jira.JiraApi.prototype.getBacklogForRapidView">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getBacklogForRapidView
+        <span class="apidocSignatureSpan">(rapidViewId, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getBacklogForRapidView = function (rapidViewId, callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/xboard/plan/backlog/data?rapidViewId=&#x27; + rapidViewId, &#x27;rest/greenhopper/&#x27;),
+        method: &#x27;GET&#x27;,
+        json: true
+    };
+
+    this.doRequest(options, function(error, response) {
+        if (error) {
+            callback(error, null);
+
+            return;
+        }
+
+        if (response.statusCode === 200) {
+            callback(null, response.body);
+
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while retrieving backlog&#x27;);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.getCurrentUser" id="apidoc.element.jira.JiraApi.prototype.getCurrentUser">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getCurrentUser
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCurrentUser = function (callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/session&#x27;, &#x27;rest/auth/&#x27;, &#x27;1&#x27;),
+        method: &#x27;GET&#x27;,
+        json: true
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 200) {
+            callback(null, body);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while getting current user&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.getLastSprintForRapidView" id="apidoc.element.jira.JiraApi.prototype.getLastSprintForRapidView">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getLastSprintForRapidView
+        <span class="apidocSignatureSpan">(rapidViewId, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLastSprintForRapidView = function (rapidViewId, callback) {
+
+    var options = {
+      rejectUnauthorized: this.strictSSL,
+      uri: this.makeUri(&#x27;/sprintquery/&#x27; + rapidViewId, &#x27;rest/greenhopper/&#x27;),
+      method: &#x27;GET&#x27;,
+      json:true
+    };
+
+    this.doRequest(options, function(error, response) {
+
+      if (error) {
+          callback(error, null);
+          return;
+      }
+
+      if (response.statusCode === 404) {
+        callback(&#x27;Invalid URL&#x27;);
+        return;
+      }
+
+      if (response.statusCode !== 200) {
+        callback(response.statusCode + &#x27;: Unable to connect to JIRA during sprints search.&#x27;);
+        return;
+      }
+
+      if (response.body !== null) {
+        var sprints = response.body.sprints;
+        callback(null, sprints.pop());
+        return;
+      }
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.getProject" id="apidoc.element.jira.JiraApi.prototype.getProject">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getProject
+        <span class="apidocSignatureSpan">(project, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProject = function (project, callback) {
+
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/project/&#x27; + project),
+        method: &#x27;GET&#x27;
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 404) {
+            callback(&#x27;Invalid project.&#x27;);
+            return;
+        }
+
+        if (response.statusCode !== 200) {
+            callback(response.statusCode + &#x27;: Unable to connect to JIRA during getProject.&#x27;);
+            return;
+        }
+
+        body = JSON.parse(body);
+        callback(null, body);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.getSprintIssues" id="apidoc.element.jira.JiraApi.prototype.getSprintIssues">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getSprintIssues
+        <span class="apidocSignatureSpan">(rapidViewId, sprintId, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getSprintIssues(rapidViewId, sprintId, callback) {
+
+  var options = {
+    rejectUnauthorized: this.strictSSL,
+    uri: this.makeUri(&#x27;/rapid/charts/sprintreport?rapidViewId=&#x27; + rapidViewId + &#x27;&#x26;sprintId=&#x27; + sprintId, &#x27;rest/greenhopper/&#x27;),
+    method: &#x27;GET&#x27;,
+    json: true
+  };
+
+  this.doRequest(options, function(error, response) {
+
+    if (error) {
+        callback(error, null);
+        return;
+    }
+
+    if( response.statusCode === 404 ) {
+      callback(&#x27;Invalid URL&#x27;);
+      return;
+    }
+
+    if( response.statusCode !== 200 ) {
+      callback(response.statusCode + &#x27;: Unable to connect to JIRA during sprints search&#x27;);
+      return;
+    }
+
+    if(response.body !== null) {
+      callback(null, response.body);
+    } else {
+      callback(&#x27;No body&#x27;);
+    }
+
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.getUnresolvedIssueCount" id="apidoc.element.jira.JiraApi.prototype.getUnresolvedIssueCount">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getUnresolvedIssueCount
+        <span class="apidocSignatureSpan">(version, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUnresolvedIssueCount = function (version, callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/version/&#x27; + version + &#x27;/unresolvedIssueCount&#x27;),
+        method: &#x27;GET&#x27;
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 404) {
+            callback(&#x27;Invalid version.&#x27;);
+            return;
+        }
+
+        if (response.statusCode !== 200) {
+            callback(response.statusCode + &#x27;: Unable to connect to JIRA during findIssueStatus.&#x27;);
+            return;
+        }
+
+        body = JSON.parse(body);
+        callback(null, body.issuesUnresolvedCount);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.getUsersIssues" id="apidoc.element.jira.JiraApi.prototype.getUsersIssues">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getUsersIssues
+        <span class="apidocSignatureSpan">(username, open, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUsersIssues = function (username, open, callback) {
+    if (username.indexOf(&#x22;@&#x22;) &#x3e; -1) {
+        username = username.replace(&#x22;@&#x22;, &#x27;\\u0040&#x27;);
+    }
+    var jql = &#x22;assignee = &#x22; + username;
+    var openText = &#x27; AND status in (Open, &#x22;In Progress&#x22;, Reopened)&#x27;;
+    if (open) { jql += openText; }
+    this.searchJira(jql, {}, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.getVersions" id="apidoc.element.jira.JiraApi.prototype.getVersions">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getVersions
+        <span class="apidocSignatureSpan">(project, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getVersions = function (project, callback) {
+
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/project/&#x27; + project + &#x27;/versions&#x27;),
+        method: &#x27;GET&#x27;
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 404) {
+            callback(&#x27;Invalid project.&#x27;);
+            return;
+        }
+
+        if (response.statusCode !== 200) {
+            callback(response.statusCode + &#x27;: Unable to connect to JIRA during getVersions.&#x27;);
+            return;
+        }
+
+        body = JSON.parse(body);
+        callback(null, body);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.getWebhook" id="apidoc.element.jira.JiraApi.prototype.getWebhook">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>getWebhook
+        <span class="apidocSignatureSpan">(webhookID, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getWebhook = function (webhookID, callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/webhook/&#x27; + webhookID, &#x27;rest/webhooks/&#x27;, &#x27;1.0&#x27;),
+        method: &#x27;GET&#x27;,
+        json: true
+    };
+
+    this.request(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 200) {
+            callback(null, body);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while getting webhook&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.issueLink" id="apidoc.element.jira.JiraApi.prototype.issueLink">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>issueLink
+        <span class="apidocSignatureSpan">(link, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">issueLink = function (link, callback) {
+
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/issueLink&#x27;),
+        method: &#x27;POST&#x27;,
+        followAllRedirects: true,
+        json: true,
+        body: link
+    };
+
+    this.doRequest(options, function(error, response) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 404) {
+            callback(&#x27;Invalid project.&#x27;);
+            return;
+        }
+
+        if (response.statusCode !== 200) {
+            callback(response.statusCode + &#x27;: Unable to connect to JIRA during issueLink.&#x27;);
+            return;
+        }
+
+        callback(null);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.listComponents" id="apidoc.element.jira.JiraApi.prototype.listComponents">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listComponents
+        <span class="apidocSignatureSpan">(project, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listComponents = function (project, callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/project/&#x27; + project + &#x27;/components&#x27;),
+        method: &#x27;GET&#x27;,
+        json: true
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 200) {
+            callback(null, body);
+            return;
+        }
+        if (response.statusCode === 404) {
+            callback(&#x22;Project not found&#x22;);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while updating&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.listFields" id="apidoc.element.jira.JiraApi.prototype.listFields">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listFields
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listFields = function (callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/field&#x27;),
+        method: &#x27;GET&#x27;,
+        json: true
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 200) {
+            callback(null, body);
+            return;
+        }
+        if (response.statusCode === 404) {
+            callback(&#x22;Not found&#x22;);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while updating&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.listIssueTypes" id="apidoc.element.jira.JiraApi.prototype.listIssueTypes">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listIssueTypes
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listIssueTypes = function (callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/issuetype&#x27;),
+        method: &#x27;GET&#x27;,
+        json: true
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 200) {
+            callback(null, body);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while retrieving issue types&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.listPriorities" id="apidoc.element.jira.JiraApi.prototype.listPriorities">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listPriorities
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listPriorities = function (callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/priority&#x27;),
+        method: &#x27;GET&#x27;,
+        json: true
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 200) {
+            callback(null, body);
+            return;
+        }
+        if (response.statusCode === 404) {
+            callback(&#x22;Not found&#x22;);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while updating&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.listProjects" id="apidoc.element.jira.JiraApi.prototype.listProjects">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listProjects
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listProjects = function (callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/project&#x27;),
+        method: &#x27;GET&#x27;,
+        json: true
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 200) {
+            callback(null, body);
+            return;
+        }
+        if (response.statusCode === 500) {
+            callback(response.statusCode + &#x27;: Error while retrieving list.&#x27;);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while updating&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.listTransitions" id="apidoc.element.jira.JiraApi.prototype.listTransitions">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listTransitions
+        <span class="apidocSignatureSpan">(issueId, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listTransitions = function (issueId, callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/issue/&#x27; + issueId + &#x27;/transitions?expand=transitions.fields&#x27;),
+        method: &#x27;GET&#x27;,
+        json: true
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 200) {
+            callback(null, body);
+            return;
+        }
+        if (response.statusCode === 404) {
+            callback(&#x22;Issue not found&#x22;);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while updating&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.listWebhooks" id="apidoc.element.jira.JiraApi.prototype.listWebhooks">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>listWebhooks
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listWebhooks = function (callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/webhook&#x27;, &#x27;rest/webhooks/&#x27;, &#x27;1.0&#x27;),
+        method: &#x27;GET&#x27;,
+        json: true
+    };
+
+    this.request(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 200) {
+            callback(null, body);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while listing webhooks&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.registerWebhook" id="apidoc.element.jira.JiraApi.prototype.registerWebhook">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>registerWebhook
+        <span class="apidocSignatureSpan">(webhook, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerWebhook = function (webhook, callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/webhook&#x27;, &#x27;rest/webhooks/&#x27;, &#x27;1.0&#x27;),
+        method: &#x27;POST&#x27;,
+        json: true,
+        body: webhook
+    };
+
+    this.request(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 201) {
+            callback(null, body);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while registering new webhook&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.searchJira" id="apidoc.element.jira.JiraApi.prototype.searchJira">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>searchJira
+        <span class="apidocSignatureSpan">(searchString, optional, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">searchJira = function (searchString, optional, callback) {
+    // backwards compatibility
+    optional = optional || {};
+    if (Array.isArray(optional)) {
+        optional = { fields: optional };
+    }
+
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/search&#x27;),
+        method: &#x27;POST&#x27;,
+        json: true,
+        followAllRedirects: true,
+        body: {
+            jql: searchString,
+            startAt: optional.startAt || 0,
+            maxResults: optional.maxResults || 50,
+            fields: optional.fields || [&#x22;summary&#x22;, &#x22;status&#x22;, &#x22;assignee&#x22;, &#x22;description&#x22;]
+        }
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 400) {
+            callback(&#x27;Problem with the JQL query&#x27;);
+            return;
+        }
+
+        if (response.statusCode !== 200) {
+            callback(response.statusCode + &#x27;: Unable to connect to JIRA during search.&#x27;);
+            return;
+        }
+
+        callback(null, body);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.searchUsers" id="apidoc.element.jira.JiraApi.prototype.searchUsers">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>searchUsers
+        <span class="apidocSignatureSpan">(username, startAt, maxResults, includeActive, includeInactive, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">searchUsers = function (username, startAt, maxResults, includeActive, includeInactive, callback) {
+    startAt = (startAt !== undefined) ? startAt : 0;
+    maxResults = (maxResults !== undefined) ? maxResults : 50;
+    includeActive = (includeActive !== undefined) ? includeActive : true;
+    includeInactive = (includeInactive !== undefined) ? includeInactive : false;
+
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(
+            &#x27;/user/search?username=&#x27; + username +
+            &#x27;&#x26;startAt=&#x27; + startAt +
+            &#x27;&#x26;maxResults=&#x27; + maxResults +
+            &#x27;&#x26;includeActive=&#x27; + includeActive +
+            &#x27;&#x26;includeInactive=&#x27; + includeInactive),
+        method: &#x27;GET&#x27;,
+        json: true,
+        followAllRedirects: true
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 400) {
+            callback(&#x27;Unable to search&#x27;);
+            return;
+        }
+
+        if (response.statusCode !== 200) {
+            callback(response.statusCode + &#x27;: Unable to connect to JIRA during search.&#x27;);
+            return;
+        }
+
+        callback(null, body);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.transitionIssue" id="apidoc.element.jira.JiraApi.prototype.transitionIssue">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>transitionIssue
+        <span class="apidocSignatureSpan">(issueNum, issueTransition, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transitionIssue = function (issueNum, issueTransition, callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/issue/&#x27; + issueNum + &#x27;/transitions&#x27;),
+        body: issueTransition,
+        method: &#x27;POST&#x27;,
+        followAllRedirects: true,
+        json: true
+    };
+
+    this.doRequest(options, function(error, response) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 204) {
+            callback(null, &#x22;Success&#x22;);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while updating&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.updateIssue" id="apidoc.element.jira.JiraApi.prototype.updateIssue">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>updateIssue
+        <span class="apidocSignatureSpan">(issueNum, issueUpdate, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateIssue = function (issueNum, issueUpdate, callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/issue/&#x27; + issueNum),
+        body: issueUpdate,
+        method: &#x27;PUT&#x27;,
+        followAllRedirects: true,
+        json: true
+    };
+
+    this.doRequest(options, function(error, response) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 200 || response.statusCode === 204) {
+            callback(null, &#x22;Success&#x22;);
+            return;
+        }
+
+        callback(response.statusCode + &#x27;: Error while updating&#x27;);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jira.JiraApi.prototype.updateVersion" id="apidoc.element.jira.JiraApi.prototype.updateVersion">
+        function <span class="apidocSignatureSpan">jira.JiraApi.prototype.</span>updateVersion
+        <span class="apidocSignatureSpan">(version, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateVersion = function (version, callback) {
+    var options = {
+        rejectUnauthorized: this.strictSSL,
+        uri: this.makeUri(&#x27;/version/&#x27;+version.id),
+        method: &#x27;PUT&#x27;,
+        followAllRedirects: true,
+        json: true,
+        body: version
+    };
+
+    this.doRequest(options, function(error, response, body) {
+
+        if (error) {
+            callback(error, null);
+            return;
+        }
+
+        if (response.statusCode === 404) {
+            callback(&#x27;Version does not exist or the currently authenticated user does not have permission to view it&#x27;);
+            return;
+        }
+
+        if (response.statusCode === 403) {
+            callback(&#x27;The currently authenticated user does not have permission to edit the version&#x27;);
+            return;
+        }
+
+        if (response.statusCode !== 200) {
+            callback(response.statusCode + &#x27;: Unable to connect to JIRA during updateVersion.&#x27;);
+            return;
+        }
+
+        callback(null, body);
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
